@@ -1,0 +1,51 @@
+{
+  "name": "evaluate",
+  "version": "1.0.0",
+  "description": "Professional electric vehicle economics calculator designed to empower consumers and industry professionals with data-driven insights for EV decision making.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ev-calculator",
+    "electric-vehicle",
+    "battery-chemistry",
+    "charging-efficiency",
+    "ev-economics",
+    "cost-comparison",
+    "energy-consumption",
+    "charging-cost-analysis",
+    "tailwindcss",
+    "vite"
+  ],
+  "author": "EValuate Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajithrn/evaluate.git"
+  },
+  "homepage": "https://evaluate.autos",
+  "bugs": {
+    "url": "https://github.com/ajithrn/evaluate/issues"
+  },
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "feather-icons": "^4.29.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.33.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "sass": "^1.90.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.1.2"
+  }
+}

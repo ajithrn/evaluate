@@ -1,0 +1,10 @@
+@use "tailwindcss";
+
+// Table row hover effect
+.table-row-hover {
+  transition: all 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(249, 250, 251, 1);
+}
