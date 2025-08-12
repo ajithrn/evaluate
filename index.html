@@ -1,721 +1,839 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EValuate: Your Guide to EV Economics</title>
-    <meta name="description" content="Professional electric vehicle economics calculator providing data-driven insights for EV decision making. Analyze costs, efficiency, and battery chemistry impacts with real-time calculations.">
-    <meta name="keywords" content="EV calculator, electric vehicle cost, battery chemistry, charging efficiency, EV economics, electric car comparison, energy consumption, charging cost analysis">
-    <meta name="author" content="EValuate">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://evaluate.app/">
-    <meta property="og:title" content="EValuate: Your Guide to EV Economics">
-    <meta property="og:description" content="Comprehensive electric vehicle economics calculator with battery chemistry analysis, charging cost breakdowns, and efficiency modeling for informed EV decisions.">
-    <meta property="og:image" content="https://evaluate.app/assets/og-image.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EValuate: Your Guide to EV Economics</title>
+  <meta name="description"
+    content="Professional electric vehicle economics calculator providing data-driven insights for EV decision making. Analyze costs, efficiency, and battery chemistry impacts with real-time calculations.">
+  <meta name="keywords"
+    content="EV calculator, electric vehicle cost, battery chemistry, charging efficiency, EV economics, electric car comparison, energy consumption, charging cost analysis">
+  <meta name="author" content="EValuate">
+  <meta name="robots" content="index, follow">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://evaluate.app/">
-    <meta property="twitter:title" content="EValuate: Your Guide to EV Economics">
-    <meta property="twitter:description" content="Professional EV cost calculator with battery chemistry insights and real-time efficiency analysis.">
-    <meta property="twitter:image" content="https://evaluate.app/assets/twitter-image.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evaluate.app/">
+  <meta property="og:title" content="EValuate: Your Guide to EV Economics">
+  <meta property="og:description"
+    content="Comprehensive electric vehicle economics calculator with battery chemistry analysis, charging cost breakdowns, and efficiency modeling for informed EV decisions.">
+  <meta property="og:image" content="https://evaluate.app/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://evaluate.app/">
+  <meta property="twitter:title" content="EValuate: Your Guide to EV Economics">
+  <meta property="twitter:description"
+    content="Professional EV cost calculator with battery chemistry insights and real-time efficiency analysis.">
+  <meta property="twitter:image" content="https://evaluate.app/assets/twitter-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen">
-    <!-- Header -->
-    <div class="container mx-auto px-4 py-8">
-        <div class="text-center mb-8">
-            <div class="flex items-center justify-center mb-4">
-                <i data-feather="zap" class="h-12 w-12 text-yellow-400 mr-3"></i>
-                <h1 class="text-4xl md:text-5xl font-bold text-white">EValuate</h1>
-            </div>
-            <p class="text-2xl text-yellow-300 font-semibold mb-4">Your Guide to EV Economics</p>
-            <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-6">
-                Professional electric vehicle economics calculator designed to empower consumers and industry professionals with data-driven insights for EV decision making. 
-                Get transparent cost analysis, battery chemistry insights, and comprehensive comparisons across different charging scenarios.
-            </p>
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400 max-w-4xl mx-auto">
-                <div class="flex items-center">
-                    <i data-feather="battery" class="h-4 w-4 mr-2 text-green-400"></i>
-                    <span>Battery Chemistry Analysis</span>
-                </div>
-                <div class="flex items-center">
-                    <i data-feather="dollar-sign" class="h-4 w-4 mr-2 text-blue-400"></i>
-                    <span>Real-time Cost Calculations</span>
-                </div>
-                <div class="flex items-center">
-                    <i data-feather="trending-up" class="h-4 w-4 mr-2 text-purple-400"></i>
-                    <span>Efficiency Modeling</span>
-                </div>
-                <div class="flex items-center">
-                    <i data-feather="trending-down" class="h-4 w-4 mr-2 text-orange-400"></i>
-                    <span>Cost Savings Analysis</span>
-                </div>
-            </div>
+  <!-- Header -->
+  <div class="container mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+      <div class="flex items-center justify-center mb-4">
+        <i data-feather="zap" class="h-12 w-12 text-yellow-400 mr-3"></i>
+        <h1 class="text-4xl md:text-5xl font-bold text-white">EValuate</h1>
+      </div>
+      <p class="text-2xl text-yellow-300 font-semibold mb-4">Your Guide to EV Economics</p>
+      <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-6">
+        Professional electric vehicle economics calculator designed to empower consumers and industry professionals with
+        data-driven insights for EV decision making.
+        Get transparent cost analysis, battery chemistry insights, and comprehensive comparisons across different
+        charging scenarios.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400 max-w-4xl mx-auto">
+        <div class="flex items-center">
+          <i data-feather="battery" class="h-4 w-4 mr-2 text-green-400"></i>
+          <span>Battery Chemistry Analysis</span>
         </div>
-
-        <!-- Methodology Accordion -->
-        <div class="bg-white rounded-xl shadow-2xl mb-8 overflow-hidden">
-            <button id="methodologyToggle" class="w-full px-6 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold text-left flex items-center justify-between hover:from-emerald-700 hover:to-teal-700 transition-all duration-200">
-                <div class="flex items-center">
-                    <i data-feather="book-open" class="h-5 w-5 mr-2"></i>
-                    <span class="text-lg">Technical Methodology & Data Input Guidelines</span>
-                </div>
-                <i data-feather="chevron-down" id="methodologyChevron" class="h-5 w-5 transform transition-transform duration-300"></i>
-            </button>
-            <div id="methodologyContent" class="hidden">
-                <div class="p-6">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                        <!-- Battery Chemistry Impact -->
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-5">
-                            <h4 class="text-lg font-semibold text-blue-900 mb-3 flex items-center">
-                                <i data-feather="cpu" class="h-5 w-5 mr-2"></i>
-                                Battery Chemistry Impact
-                            </h4>
-                            <ul class="space-y-2 text-slate-700">
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>LFP (Lithium Iron Phosphate):</strong> Most stable, excellent thermal management, moderate efficiency</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>NMC (Nickel Manganese Cobalt):</strong> Balanced performance, good energy density, moderate efficiency loss</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>NCA (Nickel Cobalt Aluminum):</strong> High energy density, more temperature sensitive</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>LTO (Lithium Titanate):</strong> Ultra-fast charging, highest efficiency, excellent longevity</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Ideal Conditions -->
-                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-5">
-                            <h4 class="text-lg font-semibold text-green-900 mb-3 flex items-center">
-                                <i data-feather="thermometer" class="h-5 w-5 mr-2"></i>
-                                Ideal Conditions Assumed
-                            </h4>
-                            <ul class="space-y-2 text-slate-700">
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Battery temperature: 20-25°C (optimal range)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>New battery condition (minimal degradation)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Quality charging infrastructure</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Standard atmospheric pressure</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Consistent power delivery from grid</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Real-World Factors -->
-                        <div class="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-lg p-5">
-                            <h4 class="text-lg font-semibold text-orange-900 mb-3 flex items-center">
-                                <i data-feather="alert-triangle" class="h-5 w-5 mr-2"></i>
-                                Real-World Factors
-                            </h4>
-                            <ul class="space-y-2 text-slate-700">
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>Temperature:</strong> Cold reduces efficiency by 10-15%</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>Age:</strong> 2-3% efficiency loss per 100,000 km</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>Charging Speed:</strong> Faster charging = more heat loss</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>Grid Quality:</strong> Voltage fluctuations affect efficiency</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span><strong>Cable Quality:</strong> Resistance adds 1-2% loss</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Efficiency Optimization -->
-                        <div class="bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg p-5">
-                            <h4 class="text-lg font-semibold text-purple-900 mb-3 flex items-center">
-                                <i data-feather="trending-up" class="h-5 w-5 mr-2"></i>
-                                Efficiency Optimization
-                            </h4>
-                            <ul class="space-y-2 text-slate-700">
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>20-80% charging avoids efficiency loss at extremes</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Preconditioning battery improves efficiency</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Moderate charging speeds reduce heat loss</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Regular battery maintenance preserves efficiency</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Quality charging equipment matters significantly</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- How to Determine EV Efficiency -->
-                        <div class="bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-lg p-5">
-                            <h4 class="text-lg font-semibold text-cyan-900 mb-3 flex items-center">
-                                <i data-feather="bar-chart" class="h-5 w-5 mr-2"></i>
-                                How to Determine EV Efficiency (km/kWh)
-                            </h4>
-                            <div class="space-y-3 text-slate-700">
-                                <div class="bg-white p-3 rounded border-l-4 border-cyan-500">
-                                    <p class="font-semibold text-cyan-800 mb-2">Method 1: Trip Computer Data</p>
-                                    <ul class="space-y-1 text-sm">
-                                        <li>• Check your EV's trip computer or infotainment system</li>
-                                        <li>• Look for "Energy Consumption" or "Efficiency" display</li>
-                                        <li>• Note the km/kWh or kWh/100km reading</li>
-                                        <li>• Use data from mixed driving conditions for accuracy</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-3 rounded border-l-4 border-cyan-500">
-                                    <p class="font-semibold text-cyan-800 mb-2">Method 2: Manual Calculation</p>
-                                    <ul class="space-y-1 text-sm">
-                                        <li>• Record odometer reading and battery % before trip</li>
-                                        <li>• Drive normally, then record final readings</li>
-                                        <li>• <strong>Formula:</strong> Distance ÷ Energy Used = km/kWh</li>
-                                        <li>• <strong>Example:</strong> 150km ÷ 20kWh = 7.5 km/kWh</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-3 rounded border-l-4 border-cyan-500">
-                                    <p class="font-semibold text-cyan-800 mb-2">Method 3: Charging Data</p>
-                                    <ul class="space-y-1 text-sm">
-                                        <li>• Use charging app data (energy added vs distance driven)</li>
-                                        <li>• Account for charging losses (add 10-15% to energy used)</li>
-                                        <li>• Average over multiple charging sessions for accuracy</li>
-                                    </ul>
-                                </div>
-                                <div class="text-xs text-cyan-700 bg-cyan-100 p-2 rounded mt-3">
-                                    <strong>Typical Values:</strong> City: 8-12 km/kWh | Highway: 5-8 km/kWh | Mixed: 6-9 km/kWh<br>
-                                    <strong>Note:</strong> This calculator focuses on energy costs only. Maintenance costs are not factored in for fair comparison.<br>
-                                    <strong>EV Maintenance (typical):</strong> ₹0.20-0.50/km (brake pads, tires, cabin filter, coolant)
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- How to Calculate ICE Running Cost -->
-                        <div class="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200 rounded-lg p-5">
-                            <h4 class="text-lg font-semibold text-rose-900 mb-3 flex items-center">
-                                <i data-feather="truck" class="h-5 w-5 mr-2"></i>
-                                How to Calculate ICE Fuel Cost (₹/km)
-                            </h4>
-                            <div class="space-y-3 text-slate-700">
-                                <div class="bg-white p-3 rounded border-l-4 border-rose-500">
-                                    <p class="font-semibold text-rose-800 mb-2">Fuel Cost Calculation</p>
-                                    <ul class="space-y-1 text-sm">
-                                        <li>• <strong>Formula:</strong> Fuel Price ÷ Mileage = Fuel Cost/km</li>
-                                        <li>• <strong>Example:</strong> ₹100/L ÷ 15 km/L = ₹6.67/km</li>
-                                        <li>• Use real-world mileage, not manufacturer claims</li>
-                                        <li>• Account for city vs highway driving patterns</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-3 rounded border-l-4 border-rose-500">
-                                    <p class="font-semibold text-rose-800 mb-2">How to Determine Real-World Mileage</p>
-                                    <ul class="space-y-1 text-sm">
-                                        <li>• Fill tank completely, note odometer reading</li>
-                                        <li>• Drive normally for 200-300 km</li>
-                                        <li>• Fill tank again, note fuel consumed and distance</li>
-                                        <li>• <strong>Mileage = Distance ÷ Fuel Consumed</strong></li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-3 rounded border-l-4 border-rose-500">
-                                    <p class="font-semibold text-rose-800 mb-2">Fuel Price Considerations</p>
-                                    <ul class="space-y-1 text-sm">
-                                        <li>• Use current local fuel prices (petrol/diesel)</li>
-                                        <li>• Consider 6-month average for seasonal variations</li>
-                                        <li>• Factor in different fuel grades if applicable</li>
-                                        <li>• Account for fuel station location (highway vs city)</li>
-                                    </ul>
-                                </div>
-                                <div class="text-xs text-rose-700 bg-rose-100 p-2 rounded mt-3">
-                                    <strong>Quick Estimate:</strong> Petrol @₹100/L, 15km/L mileage = ₹6.67/km fuel cost<br>
-                                    <strong>Note:</strong> This calculator focuses on fuel costs only. Maintenance costs are not factored in for fair comparison with EV energy costs.<br>
-                                    <strong>ICE Maintenance (typical):</strong> ₹1.50-3.00/km (tyres, break pads, oil changes, filters, spark plugs, belts, clutch, engine repairs)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Important Note -->
-                    <div class="bg-gradient-to-r from-yellow-100 to-amber-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
-                        <div class="flex items-start">
-                            <i data-feather="info" class="h-5 w-5 text-yellow-700 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <div>
-                                <h4 class="text-yellow-900 font-semibold mb-2">Important Note</h4>
-                                <p class="text-yellow-800">These calculations use laboratory-tested efficiency values under ideal conditions. Real-world efficiency may vary by ±5% depending on environmental factors, charging habits, and equipment quality. The 20-80% charging window typically provides 1-3% better efficiency than full 0-100% cycles.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flex items-center">
+          <i data-feather="dollar-sign" class="h-4 w-4 mr-2 text-blue-400"></i>
+          <span>Real-time Cost Calculations</span>
         </div>
+        <div class="flex items-center">
+          <i data-feather="trending-up" class="h-4 w-4 mr-2 text-purple-400"></i>
+          <span>Efficiency Modeling</span>
+        </div>
+        <div class="flex items-center">
+          <i data-feather="trending-down" class="h-4 w-4 mr-2 text-orange-400"></i>
+          <span>Cost Savings Analysis</span>
+        </div>
+      </div>
+    </div>
 
-        <!-- Input Form -->
-        <div class="bg-white rounded-xl shadow-2xl mb-8">
-            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-t-xl">
-                <div class="flex items-center">
-                    <i data-feather="settings" class="h-6 w-6 mr-2"></i>
-                    <h2 class="text-xl font-semibold">Vehicle & Charging Parameters</h2>
-                </div>
+    <!-- Methodology Accordion -->
+    <div class="bg-white rounded-xl shadow-2xl mb-8 overflow-hidden">
+      <button id="methodologyToggle"
+        class="w-full px-6 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold text-left flex items-center justify-between hover:from-emerald-700 hover:to-teal-700 transition-all duration-200">
+        <div class="flex items-center">
+          <i data-feather="book-open" class="h-5 w-5 mr-2"></i>
+          <span class="text-lg">Technical Methodology & Data Input Guidelines</span>
+        </div>
+        <i data-feather="chevron-down" id="methodologyChevron"
+          class="h-5 w-5 transform transition-transform duration-300"></i>
+      </button>
+      <div id="methodologyContent" class="hidden">
+        <div class="p-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <!-- Battery Chemistry Impact -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-5">
+              <h4 class="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                <i data-feather="cpu" class="h-5 w-5 mr-2"></i>
+                Battery Chemistry Impact
+              </h4>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>LFP (Lithium Iron Phosphate):</strong> Most stable, excellent thermal management,
+                    moderate efficiency</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>NMC (Nickel Manganese Cobalt):</strong> Balanced performance, good energy density,
+                    moderate efficiency loss</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>NCA (Nickel Cobalt Aluminum):</strong> High energy density, more temperature
+                    sensitive</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>LTO (Lithium Titanate):</strong> Ultra-fast charging, highest efficiency, excellent
+                    longevity</span>
+                </li>
+              </ul>
             </div>
+
+            <!-- Ideal Conditions -->
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-5">
+              <h4 class="text-lg font-semibold text-green-900 mb-3 flex items-center">
+                <i data-feather="thermometer" class="h-5 w-5 mr-2"></i>
+                Ideal Conditions Assumed
+              </h4>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Battery temperature: 20-25°C (optimal range)</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>New battery condition (minimal degradation)</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Quality charging infrastructure</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Standard atmospheric pressure</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Consistent power delivery from grid</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Real-World Factors -->
+            <div class="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-lg p-5">
+              <h4 class="text-lg font-semibold text-orange-900 mb-3 flex items-center">
+                <i data-feather="alert-triangle" class="h-5 w-5 mr-2"></i>
+                Real-World Factors
+              </h4>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Temperature:</strong> Cold reduces efficiency by 10-15%</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Age:</strong> 2-3% efficiency loss per 100,000 km</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Charging Speed:</strong> Faster charging = more heat loss</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Grid Quality:</strong> Voltage fluctuations affect efficiency</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span><strong>Cable Quality:</strong> Resistance adds 1-2% loss</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Efficiency Optimization -->
+            <div class="bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-lg p-5">
+              <h4 class="text-lg font-semibold text-purple-900 mb-3 flex items-center">
+                <i data-feather="trending-up" class="h-5 w-5 mr-2"></i>
+                Efficiency Optimization
+              </h4>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>20-80% charging avoids efficiency loss at extremes</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Preconditioning battery improves efficiency</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Moderate charging speeds reduce heat loss</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Regular battery maintenance preserves efficiency</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span>Quality charging equipment matters significantly</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- How to Determine EV Efficiency -->
+            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-lg p-5">
+              <h4 class="text-lg font-semibold text-cyan-900 mb-3 flex items-center">
+                <i data-feather="bar-chart" class="h-5 w-5 mr-2"></i>
+                How to Determine EV Efficiency (km/kWh)
+              </h4>
+              <div class="space-y-3 text-slate-700">
+                <div class="bg-white p-3 rounded border-l-4 border-cyan-500">
+                  <p class="font-semibold text-cyan-800 mb-2">Method 1: Trip Computer Data</p>
+                  <ul class="space-y-1 text-sm">
+                    <li>• Check your EV's trip computer or infotainment system</li>
+                    <li>• Look for "Energy Consumption" or "Efficiency" display</li>
+                    <li>• Note the km/kWh or kWh/100km reading</li>
+                    <li>• Use data from mixed driving conditions for accuracy</li>
+                  </ul>
+                </div>
+                <div class="bg-white p-3 rounded border-l-4 border-cyan-500">
+                  <p class="font-semibold text-cyan-800 mb-2">Method 2: Manual Calculation</p>
+                  <ul class="space-y-1 text-sm">
+                    <li>• Record odometer reading and battery % before trip</li>
+                    <li>• Drive normally, then record final readings</li>
+                    <li>• <strong>Formula:</strong> Distance ÷ Energy Used = km/kWh</li>
+                    <li>• <strong>Example:</strong> 150km ÷ 20kWh = 7.5 km/kWh</li>
+                  </ul>
+                </div>
+                <div class="bg-white p-3 rounded border-l-4 border-cyan-500">
+                  <p class="font-semibold text-cyan-800 mb-2">Method 3: Charging Data</p>
+                  <ul class="space-y-1 text-sm">
+                    <li>• Use charging app data (energy added vs distance driven)</li>
+                    <li>• Account for charging losses (add 10-15% to energy used)</li>
+                    <li>• Average over multiple charging sessions for accuracy</li>
+                  </ul>
+                </div>
+                <div class="text-xs text-cyan-700 bg-cyan-100 p-2 rounded mt-3">
+                  <strong>Typical Values:</strong> City: 8-12 km/kWh | Highway: 5-8 km/kWh | Mixed: 6-9 km/kWh<br>
+                  <strong>Note:</strong> This calculator focuses on energy costs only. Maintenance costs are not
+                  factored in for fair comparison.<br>
+                  <strong>EV Maintenance (typical):</strong> ₹0.20-0.50/km (brake pads, tires, cabin filter, coolant)
+                </div>
+              </div>
+            </div>
+
+            <!-- How to Calculate ICE Running Cost -->
+            <div class="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200 rounded-lg p-5">
+              <h4 class="text-lg font-semibold text-rose-900 mb-3 flex items-center">
+                <i data-feather="truck" class="h-5 w-5 mr-2"></i>
+                How to Calculate ICE Fuel Cost (₹/km)
+              </h4>
+              <div class="space-y-3 text-slate-700">
+                <div class="bg-white p-3 rounded border-l-4 border-rose-500">
+                  <p class="font-semibold text-rose-800 mb-2">Fuel Cost Calculation</p>
+                  <ul class="space-y-1 text-sm">
+                    <li>• <strong>Formula:</strong> Fuel Price ÷ Mileage = Fuel Cost/km</li>
+                    <li>• <strong>Example:</strong> ₹100/L ÷ 15 km/L = ₹6.67/km</li>
+                    <li>• Use real-world mileage, not manufacturer claims</li>
+                    <li>• Account for city vs highway driving patterns</li>
+                  </ul>
+                </div>
+                <div class="bg-white p-3 rounded border-l-4 border-rose-500">
+                  <p class="font-semibold text-rose-800 mb-2">How to Determine Real-World Mileage</p>
+                  <ul class="space-y-1 text-sm">
+                    <li>• Fill tank completely, note odometer reading</li>
+                    <li>• Drive normally for 200-300 km</li>
+                    <li>• Fill tank again, note fuel consumed and distance</li>
+                    <li>• <strong>Mileage = Distance ÷ Fuel Consumed</strong></li>
+                  </ul>
+                </div>
+                <div class="bg-white p-3 rounded border-l-4 border-rose-500">
+                  <p class="font-semibold text-rose-800 mb-2">Fuel Price Considerations</p>
+                  <ul class="space-y-1 text-sm">
+                    <li>• Use current local fuel prices (petrol/diesel)</li>
+                    <li>• Consider 6-month average for seasonal variations</li>
+                    <li>• Factor in different fuel grades if applicable</li>
+                    <li>• Account for fuel station location (highway vs city)</li>
+                  </ul>
+                </div>
+                <div class="text-xs text-rose-700 bg-rose-100 p-2 rounded mt-3">
+                  <strong>Quick Estimate:</strong> Petrol @₹100/L, 15km/L mileage = ₹6.67/km fuel cost<br>
+                  <strong>Note:</strong> This calculator focuses on fuel costs only. Maintenance costs are not factored
+                  in for fair comparison with EV energy costs.<br>
+                  <strong>ICE Maintenance (typical):</strong> ₹1.50-3.00/km (tyres, break pads, oil changes, filters,
+                  spark plugs, belts, clutch, engine repairs)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Note -->
+          <div class="bg-gradient-to-r from-yellow-100 to-amber-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+            <div class="flex items-start">
+              <i data-feather="info" class="h-5 w-5 text-yellow-700 mr-2 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <h4 class="text-yellow-900 font-semibold mb-2">Important Note</h4>
+                <p class="text-yellow-800">These calculations use laboratory-tested efficiency values under ideal
+                  conditions. Real-world efficiency may vary by ±5% depending on environmental factors, charging habits,
+                  and equipment quality. The 20-80% charging window typically provides 1-3% better efficiency than full
+                  0-100% cycles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Left Sidebar - Input Form -->
+      <div class="lg:w-1/3 xl:w-1/4">
+        <div class="bg-white rounded-xl shadow-2xl sticky top-8">
+          <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-t-xl">
+            <div class="flex items-center">
+              <i data-feather="settings" class="h-6 w-6 mr-2"></i>
+              <h2 class="text-xl font-semibold">Vehicle & Charging Parameters</h2>
+            </div>
+          </div>
+          <div class="p-6 max-h-[calc(100vh-12rem)] overflow-y-auto sidebar-scroll">
+            <!-- Battery Chemistry Selection -->
+            <div class="input-group mb-8">
+              <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                <i data-feather="cpu" class="h-4 w-4 mr-1 text-purple-600"></i>
+                Battery Chemistry
+                <div class="relative ml-2">
+                  <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Select the battery chemistry type used in your EV"></i>
+                </div>
+              </label>
+              <select id="chemistrySelect" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 mb-4">
+                <option value="LFP">LFP - Lithium Iron Phosphate</option>
+                <option value="NMC">NMC - Nickel Manganese Cobalt</option>
+                <option value="NCA">NCA - Nickel Cobalt Aluminum</option>
+                <option value="LTO">LTO - Lithium Titanate</option>
+              </select>
+              <div class="hidden" id="chemistryGrid">
+                <div
+                  class="chemistry-option border-2 border-purple-500 bg-purple-50 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:shadow-lg selected"
+                  data-chemistry="LFP">
+                  <div class="chemistry-name font-semibold text-gray-900 mb-1">LFP</div>
+                  <div class="chemistry-full-name text-xs text-gray-600 mb-1">Lithium Iron Phosphate</div>
+                  <div class="chemistry-efficiency text-xs text-purple-600">91% (0-100%) | 92.5% (20-80%)</div>
+                </div>
+                <div
+                  class="chemistry-option border-2 border-gray-300 bg-gray-50 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-purple-300"
+                  data-chemistry="NMC">
+                  <div class="chemistry-name font-semibold text-gray-900 mb-1">NMC</div>
+                  <div class="chemistry-full-name text-xs text-gray-600 mb-1">Nickel Manganese Cobalt</div>
+                  <div class="chemistry-efficiency text-xs text-gray-500">89% (0-100%) | 91% (20-80%)</div>
+                </div>
+                <div
+                  class="chemistry-option border-2 border-gray-300 bg-gray-50 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-purple-300"
+                  data-chemistry="NCA">
+                  <div class="chemistry-name font-semibold text-gray-900 mb-1">NCA</div>
+                  <div class="chemistry-full-name text-xs text-gray-600 mb-1">Nickel Cobalt Aluminum</div>
+                  <div class="chemistry-efficiency text-xs text-gray-500">88% (0-100%) | 90% (20-80%)</div>
+                </div>
+                <div
+                  class="chemistry-option border-2 border-gray-300 bg-gray-50 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-purple-300"
+                  data-chemistry="LTO">
+                  <div class="chemistry-name font-semibold text-gray-900 mb-1">LTO</div>
+                  <div class="chemistry-full-name text-xs text-gray-600 mb-1">Lithium Titanate</div>
+                  <div class="chemistry-efficiency text-xs text-gray-500">93% (0-100%) | 94% (20-80%)</div>
+                </div>
+              </div>
+              <div class="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+                <div id="chemistryInfo">
+                  <div class="flex items-center mb-3">
+                    <i data-feather="cpu" class="h-5 w-5 mr-2 text-blue-600"></i>
+                    <h4 class="font-semibold text-blue-900" id="chemistryTitle">LFP - Lithium Iron Phosphate</h4>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4 mb-3">
+                    <div class="bg-white p-3 rounded-lg border border-blue-200">
+                      <div class="text-xs text-blue-600 font-medium">0-100% Efficiency</div>
+                      <div class="text-lg font-bold text-blue-900" id="efficiency0to100">91.0%</div>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-blue-200">
+                      <div class="text-xs text-blue-600 font-medium">20-80% Efficiency</div>
+                      <div class="text-lg font-bold text-blue-900" id="efficiency20to80">92.5%</div>
+                    </div>
+                  </div>
+                  <p class="text-blue-800 text-sm" id="chemistryDescription">
+                    Most popular in modern EVs. Excellent thermal stability and long cycle life. Moderate charging efficiency with minimal degradation over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Input Grid -->
+            <div class="space-y-6">
+              <!-- Battery Capacity -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="battery" class="h-4 w-4 mr-1 text-green-600"></i>
+                  Battery Capacity (kWh)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Nominal battery capacity as specified by manufacturer"></i>
+                  </div>
+                </label>
+                <input type="number" id="batteryCapacity" min="10" max="200" step="1" value="53"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="batteryCapacityError"></div>
+              </div>
+
+              <!-- Efficiency Mode -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="activity" class="h-4 w-4 mr-1 text-blue-600"></i>
+                  Efficiency Mode
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Choose how you want to specify vehicle efficiency"></i>
+                  </div>
+                </label>
+                <select id="efficiencyMode"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                  <option value="kmPerKwh">km per kWh</option>
+                  <option value="kmPerPercent">km per 1% charge</option>
+                </select>
+              </div>
+
+              <!-- Efficiency Value -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center" id="efficiencyLabel">
+                  <i data-feather="activity" class="h-4 w-4 mr-1 text-indigo-600"></i>
+                  Efficiency (km/kWh)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Real-world efficiency from battery to wheels"></i>
+                  </div>
+                </label>
+                <input type="number" id="efficiency" min="1" max="15" step="0.1" value="7.7"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="efficiencyError"></div>
+              </div>
+
+              <!-- Fast DC Night -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="moon" class="h-4 w-4 mr-1 text-slate-600"></i>
+                  Fast DC Night (₹/kWh)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Night time fast charging rates (usually higher due to demand charges)"></i>
+                  </div>
+                </label>
+                <input type="number" id="fastDCNight" min="1" max="50" step="0.5" value="25"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="fastDCNightError"></div>
+              </div>
+
+              <!-- Fast DC Day -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="sun" class="h-4 w-4 mr-1 text-yellow-600"></i>
+                  Fast DC Day (₹/kWh)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Daytime fast charging rates"></i>
+                  </div>
+                </label>
+                <input type="number" id="fastDCDay" min="1" max="50" step="0.5" value="18.5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="fastDCDayError"></div>
+              </div>
+
+              <!-- Fast DC Charging Speed -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="zap" class="h-4 w-4 mr-1 text-yellow-600"></i>
+                  Fast DC Charging Speed (kW)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Maximum DC fast charging power available"></i>
+                  </div>
+                </label>
+                <input type="number" id="fastDCSpeed" min="10" max="350" step="5" value="60"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="fastDCSpeedError"></div>
+              </div>
+
+              <!-- Home AC -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="home" class="h-4 w-4 mr-1 text-green-600"></i>
+                  Home AC (₹/kWh)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Residential electricity rates for home charging"></i>
+                  </div>
+                </label>
+                <input type="number" id="homeAC" min="1" max="30" step="0.5" value="10"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="homeACError"></div>
+              </div>
+
+              <!-- Home AC Solar -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="sun" class="h-4 w-4 mr-1 text-orange-600"></i>
+                  Home AC Solar (₹/kWh)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Cost of solar power including system amortization"></i>
+                  </div>
+                </label>
+                <input type="number" id="homeACSolar" min="0" max="20" step="0.5" value="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="homeACSolarError"></div>
+              </div>
+
+              <!-- Home AC Charging Speed -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="home" class="h-4 w-4 mr-1 text-green-600"></i>
+                  Home AC Charging Speed (kW)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Home AC charging power (typically 3.3kW, 7.2kW, or 11kW)"></i>
+                  </div>
+                </label>
+                <input type="number" id="homeACSpeed" min="1.4" max="22" step="0.1" value="7.2"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="homeACSpeedError"></div>
+              </div>
+
+              <!-- ICE Running Cost -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="truck" class="h-4 w-4 mr-1 text-red-600"></i>
+                  ICE Running Cost (₹/km)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Total per-km cost including fuel, maintenance, and depreciation"></i>
+                  </div>
+                </label>
+                <input type="number" id="iceRunningCost" min="5" max="30" step="0.5" value="10"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="iceRunningCostError"></div>
+              </div>
+
+              <!-- Monthly Distance -->
+              <div class="input-group">
+                <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
+                  <i data-feather="calendar" class="h-4 w-4 mr-1 text-purple-600"></i>
+                  Monthly Distance (km)
+                  <div class="relative ml-2">
+                    <i data-feather="help-circle"
+                      class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger"
+                      data-tooltip="Average distance driven per month for cost comparison"></i>
+                  </div>
+                </label>
+                <input type="number" id="monthlyDistance" min="500" max="10000" step="100" value="2000"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                <div class="error-message text-red-600 text-sm mt-1 hidden" id="monthlyDistanceError"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content Area -->
+      <div class="lg:w-2/3 xl:w-3/4 space-y-8">
+        <!-- EV Economics Dashboard -->
+        <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+          <button id="dashboardToggle"
+            class="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-left flex items-center justify-between hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+            <div class="flex items-center">
+              <i data-feather="eye" class="h-6 w-6 mr-2"></i>
+              <h2 class="text-xl font-semibold">EV Economics Dashboard</h2>
+            </div>
+            <i data-feather="chevron-down" id="dashboardChevron"
+              class="h-5 w-5 transform transition-transform duration-300"></i>
+          </button>
+          <div id="dashboardContent" class="">
             <div class="p-6">
-                <!-- Battery Chemistry Selection -->
-                <div class="mb-8">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                        <i data-feather="cpu" class="h-5 w-5 mr-2 text-purple-600"></i>
-                        Select Battery Chemistry
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="chemistryGrid">
-                        <div class="chemistry-option border-2 border-purple-500 bg-purple-50 rounded-lg p-4 cursor-pointer transition-all duration-200 hover:shadow-lg selected" data-chemistry="LFP">
-                            <div class="chemistry-name font-semibold text-gray-900 mb-2">LFP</div>
-                            <div class="chemistry-full-name text-sm text-gray-600 mb-1">Lithium Iron Phosphate</div>
-                            <div class="chemistry-efficiency text-xs text-purple-600">91% (0-100%) | 92.5% (20-80%)</div>
-                        </div>
-                        <div class="chemistry-option border-2 border-gray-300 bg-gray-50 rounded-lg p-4 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-purple-300" data-chemistry="NMC">
-                            <div class="chemistry-name font-semibold text-gray-900 mb-2">NMC</div>
-                            <div class="chemistry-full-name text-sm text-gray-600 mb-1">Nickel Manganese Cobalt</div>
-                            <div class="chemistry-efficiency text-xs text-gray-500">89% (0-100%) | 91% (20-80%)</div>
-                        </div>
-                        <div class="chemistry-option border-2 border-gray-300 bg-gray-50 rounded-lg p-4 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-purple-300" data-chemistry="NCA">
-                            <div class="chemistry-name font-semibold text-gray-900 mb-2">NCA</div>
-                            <div class="chemistry-full-name text-sm text-gray-600 mb-1">Nickel Cobalt Aluminum</div>
-                            <div class="chemistry-efficiency text-xs text-gray-500">88% (0-100%) | 90% (20-80%)</div>
-                        </div>
-                        <div class="chemistry-option border-2 border-gray-300 bg-gray-50 rounded-lg p-4 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-purple-300" data-chemistry="LTO">
-                            <div class="chemistry-name font-semibold text-gray-900 mb-2">LTO</div>
-                            <div class="chemistry-full-name text-sm text-gray-600 mb-1">Lithium Titanate</div>
-                            <div class="chemistry-efficiency text-xs text-gray-500">93% (0-100%) | 94% (20-80%)</div>
-                        </div>
-                    </div>
-                    <div class="mt-4 p-4 bg-gradient-to-r from-amber-100 to-yellow-100 border border-amber-200 rounded-lg">
-                        <p id="chemistryInfo" class="text-amber-900">
-                            <strong>LFP - Lithium Iron Phosphate Selected:</strong> Most popular in modern EVs. Excellent thermal stability and long cycle life. Moderate charging efficiency with minimal degradation over time.
-                        </p>
-                    </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6" id="summaryCards">
+                <!-- Summary cards will be populated by JavaScript -->
+              </div>
+
+              <!-- Charging Frequency Section -->
+              <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-900 mb-4 flex items-center">
+                  <i data-feather="refresh-cw" class="h-5 w-5 mr-2"></i>
+                  Charging Frequency & Recommendations
+                </h3>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6" id="chargingFrequency">
+                  <!-- Charging frequency info will be populated by JavaScript -->
                 </div>
+              </div>
 
-                <!-- Input Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Battery Capacity -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="battery" class="h-4 w-4 mr-1 text-green-600"></i>
-                            Battery Capacity (kWh)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Nominal battery capacity as specified by manufacturer"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="batteryCapacity" min="10" max="200" step="1" value="53" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="batteryCapacityError"></div>
-                    </div>
-
-                    <!-- Efficiency Mode -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="activity" class="h-4 w-4 mr-1 text-blue-600"></i>
-                            Efficiency Mode
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Choose how you want to specify vehicle efficiency"></i>
-                            </div>
-                        </label>
-                        <select id="efficiencyMode" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                            <option value="kmPerKwh">km per kWh</option>
-                            <option value="kmPerPercent">km per 1% charge</option>
-                        </select>
-                    </div>
-
-                    <!-- Efficiency Value -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center" id="efficiencyLabel">
-                            <i data-feather="activity" class="h-4 w-4 mr-1 text-indigo-600"></i>
-                            Efficiency (km/kWh)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Real-world efficiency from battery to wheels"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="efficiency" min="1" max="15" step="0.1" value="7.7" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="efficiencyError"></div>
-                    </div>
-
-                    <!-- Fast DC Night -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="moon" class="h-4 w-4 mr-1 text-slate-600"></i>
-                            Fast DC Night (₹/kWh)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Night time fast charging rates (usually higher due to demand charges)"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="fastDCNight" min="1" max="50" step="0.5" value="25" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="fastDCNightError"></div>
-                    </div>
-
-                    <!-- Fast DC Day -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="sun" class="h-4 w-4 mr-1 text-yellow-600"></i>
-                            Fast DC Day (₹/kWh)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Daytime fast charging rates"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="fastDCDay" min="1" max="50" step="0.5" value="18.5" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="fastDCDayError"></div>
-                    </div>
-
-                    <!-- Fast DC Charging Speed -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="zap" class="h-4 w-4 mr-1 text-yellow-600"></i>
-                            Fast DC Charging Speed (kW)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Maximum DC fast charging power available"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="fastDCSpeed" min="10" max="350" step="5" value="60" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="fastDCSpeedError"></div>
-                    </div>
-
-                    <!-- Home AC -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="home" class="h-4 w-4 mr-1 text-green-600"></i>
-                            Home AC (₹/kWh)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Residential electricity rates for home charging"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="homeAC" min="1" max="30" step="0.5" value="10" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="homeACError"></div>
-                    </div>
-
-                    <!-- Home AC Solar -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="sun" class="h-4 w-4 mr-1 text-orange-600"></i>
-                            Home AC Solar (₹/kWh)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Cost of solar power including system amortization"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="homeACSolar" min="0" max="20" step="0.5" value="5" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="homeACSolarError"></div>
-                    </div>
-
-                    <!-- Home AC Charging Speed -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="home" class="h-4 w-4 mr-1 text-green-600"></i>
-                            Home AC Charging Speed (kW)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Home AC charging power (typically 3.3kW, 7.2kW, or 11kW)"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="homeACSpeed" min="1.4" max="22" step="0.1" value="7.2" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="homeACSpeedError"></div>
-                    </div>
-
-                    <!-- ICE Running Cost -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="truck" class="h-4 w-4 mr-1 text-red-600"></i>
-                            ICE Running Cost (₹/km)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Total per-km cost including fuel, maintenance, and depreciation"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="iceRunningCost" min="5" max="30" step="0.5" value="10" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="iceRunningCostError"></div>
-                    </div>
-
-                    <!-- Monthly Distance -->
-                    <div class="input-group">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 flex items-center">
-                            <i data-feather="calendar" class="h-4 w-4 mr-1 text-purple-600"></i>
-                            Monthly Distance (km)
-                            <div class="relative ml-2">
-                                <i data-feather="help-circle" class="h-4 w-4 text-blue-500 hover:text-blue-600 cursor-help tooltip-trigger" data-tooltip="Average distance driven per month for cost comparison"></i>
-                            </div>
-                        </label>
-                        <input type="number" id="monthlyDistance" min="500" max="10000" step="100" value="2000" 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        <div class="error-message text-red-600 text-sm mt-1 hidden" id="monthlyDistanceError"></div>
-                    </div>
+              <!-- Charging Options Comparison -->
+              <div class="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-900 mb-4 flex items-center">
+                  <i data-feather="zap" class="h-5 w-5 mr-2"></i>
+                  Charging Options Comparison
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4" id="chargingOptionsComparison">
+                  <!-- Charging options comparison will be populated by JavaScript -->
                 </div>
+              </div>
             </div>
-        </div>
-
-        <!-- Quick Summary Dashboard -->
-        <div class="bg-white rounded-xl shadow-2xl mb-8">
-            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-4 rounded-t-xl">
-                <div class="flex items-center">
-                    <i data-feather="eye" class="h-6 w-6 mr-2"></i>
-                    <h2 class="text-xl font-semibold">EV Economics Dashboard</h2>
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="summaryCards">
-                    <!-- Summary cards will be populated by JavaScript -->
-                </div>
-                
-                <!-- Charging Frequency Section -->
-                <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
-                    <h3 class="text-lg font-semibold text-blue-900 mb-4 flex items-center">
-                        <i data-feather="refresh-cw" class="h-5 w-5 mr-2"></i>
-                        Charging Frequency & Recommendations
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="chargingFrequency">
-                        <!-- Charging frequency info will be populated by JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Charging Options Comparison -->
-                <div class="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg">
-                    <h3 class="text-lg font-semibold text-green-900 mb-4 flex items-center">
-                        <i data-feather="zap" class="h-5 w-5 mr-2"></i>
-                        Charging Options Comparison
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="chargingOptionsComparison">
-                        <!-- Charging options comparison will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
         <!-- Table 1: Specifications -->
         <div class="bg-white rounded-xl shadow-2xl mb-8 overflow-hidden">
-            <button id="specsToggle" class="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-semibold text-left flex items-center justify-between hover:from-purple-700 hover:to-violet-700 transition-all duration-200">
-                <div class="flex items-center">
-                    <i data-feather="database" class="h-6 w-6 mr-2"></i>
-                    <h2 class="text-xl font-semibold">Battery & Charging Specifications</h2>
-                </div>
-                <i data-feather="chevron-down" id="specsChevron" class="h-5 w-5 transform transition-transform duration-300"></i>
-            </button>
-            <div id="specsContent" class="hidden">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specification</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">0–100% Cycle</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">20–80% Cycle</th>
-                            </tr>
-                        </thead>
-                        <tbody id="specsTableBody" class="bg-white divide-y divide-gray-200">
-                        </tbody>
-                    </table>
-                </div>
+          <button id="specsToggle"
+            class="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-semibold text-left flex items-center justify-between hover:from-purple-700 hover:to-violet-700 transition-all duration-200">
+            <div class="flex items-center">
+              <i data-feather="database" class="h-6 w-6 mr-2"></i>
+              <h2 class="text-xl font-semibold">Battery & Charging Specifications</h2>
             </div>
+            <i data-feather="chevron-down" id="specsChevron"
+              class="h-5 w-5 transform transition-transform duration-300"></i>
+          </button>
+          <div id="specsContent" class="hidden">
+            <div class="overflow-x-auto">
+              <table class="min-w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Specification</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">0–100%
+                      Cycle</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">20–80%
+                      Cycle</th>
+                  </tr>
+                </thead>
+                <tbody id="specsTableBody" class="bg-white divide-y divide-gray-200">
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
         <!-- Table 2: Charging Costs -->
         <div class="bg-white rounded-xl shadow-2xl mb-8 overflow-hidden">
-            <button id="costsToggle" class="w-full px-6 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold text-left flex items-center justify-between hover:from-orange-700 hover:to-red-700 transition-all duration-200">
-                <div class="flex items-center">
-                    <i data-feather="dollar-sign" class="h-6 w-6 mr-2"></i>
-                    <h2 class="text-xl font-semibold">EV Charging Costs Analysis</h2>
-                </div>
-                <i data-feather="chevron-down" id="costsChevron" class="h-5 w-5 transform transition-transform duration-300"></i>
-            </button>
-            <div id="costsContent" class="hidden">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charging Type</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Rate (₹/kWh)</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">0–100% Charge Cost<br>(Cost per km)</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">20–80% Charge Cost<br>(Cost per km)</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Monthly Charging Cost<br>(Based on Usage)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="costsTableBody" class="bg-white divide-y divide-gray-200">
-                        </tbody>
-                    </table>
-                </div>
+          <button id="costsToggle"
+            class="w-full px-6 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold text-left flex items-center justify-between hover:from-orange-700 hover:to-red-700 transition-all duration-200">
+            <div class="flex items-center">
+              <i data-feather="dollar-sign" class="h-6 w-6 mr-2"></i>
+              <h2 class="text-xl font-semibold">EV Charging Costs Analysis</h2>
             </div>
+            <i data-feather="chevron-down" id="costsChevron"
+              class="h-5 w-5 transform transition-transform duration-300"></i>
+          </button>
+          <div id="costsContent" class="hidden">
+            <div class="overflow-x-auto">
+              <table class="min-w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charging
+                      Type</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Rate
+                      (₹/kWh)</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">0–100%
+                      Charge Cost<br>(Cost per km)</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">20–80%
+                      Charge Cost<br>(Cost per km)</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Monthly
+                      Charging Cost<br>(Based on Usage)</th>
+                  </tr>
+                </thead>
+                <tbody id="costsTableBody" class="bg-white divide-y divide-gray-200">
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
         <!-- Table 3: Charging Time Estimates -->
         <div class="bg-white rounded-xl shadow-2xl mb-8 overflow-hidden">
-            <button id="timeToggle" class="w-full px-6 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white font-semibold text-left flex items-center justify-between hover:from-red-700 hover:to-pink-700 transition-all duration-200">
-                <div class="flex items-center">
-                    <i data-feather="clock" class="h-6 w-6 mr-2"></i>
-                    <h2 class="text-xl font-semibold">Charging Time Estimates & Daily Usage</h2>
-                </div>
-                <i data-feather="chevron-down" id="timeChevron" class="h-5 w-5 transform transition-transform duration-300"></i>
-            </button>
-            <div id="timeContent" class="hidden">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charger Type & Power</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">0 – 100%<br>(Full Charge)</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">20 – 80%<br>(Optimal Range)</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Daily Top-Up<br>(Based on Usage)</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Weekly Top-Up<br>(Based on Usage)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="timeTableBody" class="bg-white divide-y divide-gray-200">
-                        </tbody>
-                    </table>
-                </div>
+          <button id="timeToggle"
+            class="w-full px-6 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white font-semibold text-left flex items-center justify-between hover:from-red-700 hover:to-pink-700 transition-all duration-200">
+            <div class="flex items-center">
+              <i data-feather="clock" class="h-6 w-6 mr-2"></i>
+              <h2 class="text-xl font-semibold">Charging Time Estimates & Daily Usage</h2>
             </div>
+            <i data-feather="chevron-down" id="timeChevron"
+              class="h-5 w-5 transform transition-transform duration-300"></i>
+          </button>
+          <div id="timeContent" class="hidden">
+            <div class="overflow-x-auto">
+              <table class="min-w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charger
+                      Type & Power</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">0 –
+                      100%<br>(Full Charge)</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">20 –
+                      80%<br>(Optimal Range)</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Daily
+                      Top-Up<br>(Based on Usage)</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Weekly
+                      Top-Up<br>(Based on Usage)</th>
+                  </tr>
+                </thead>
+                <tbody id="timeTableBody" class="bg-white divide-y divide-gray-200">
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
         <!-- Table 4: EV vs ICE Comparison -->
         <div class="bg-white rounded-xl shadow-2xl mb-8 overflow-hidden">
-            <button id="comparisonToggle" class="w-full px-6 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold text-left flex items-center justify-between hover:from-teal-700 hover:to-cyan-700 transition-all duration-200">
-                <div class="flex items-center">
-                    <i data-feather="trending-up" class="h-6 w-6 mr-2"></i>
-                    <h2 class="text-xl font-semibold">EV vs ICE Cost Comparison & Savings</h2>
-                </div>
-                <i data-feather="chevron-down" id="comparisonChevron" class="h-5 w-5 transform transition-transform duration-300"></i>
-            </button>
-            <div id="comparisonContent" class="hidden">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charging Scenario</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">EV Cost per km</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">ICE Cost per km</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Savings per km</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Monthly Savings</th>
-                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Annual Savings</th>
-                            </tr>
-                        </thead>
-                        <tbody id="comparisonTableBody" class="bg-white divide-y divide-gray-200">
-                        </tbody>
-                    </table>
-                </div>
+          <button id="comparisonToggle"
+            class="w-full px-6 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold text-left flex items-center justify-between hover:from-teal-700 hover:to-cyan-700 transition-all duration-200">
+            <div class="flex items-center">
+              <i data-feather="trending-up" class="h-6 w-6 mr-2"></i>
+              <h2 class="text-xl font-semibold">EV vs ICE Cost Comparison & Savings</h2>
             </div>
+            <i data-feather="chevron-down" id="comparisonChevron"
+              class="h-5 w-5 transform transition-transform duration-300"></i>
+          </button>
+          <div id="comparisonContent" class="hidden">
+            <div class="overflow-x-auto">
+              <table class="min-w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charging
+                      Scenario</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">EV Cost
+                      per km</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">ICE
+                      Cost per km</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Savings
+                      per km</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Monthly
+                      Savings</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Annual
+                      Savings</th>
+                  </tr>
+                </thead>
+                <tbody id="comparisonTableBody" class="bg-white divide-y divide-gray-200">
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="bg-slate-900 border-t border-slate-700 mt-20">
-            <div class="container mx-auto px-4 py-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <!-- Left: Project Info -->
-                    <div class="text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start mb-2">
-                            <i data-feather="zap" class="h-5 w-5 mr-2 text-yellow-400"></i>
-                            <h3 class="text-lg font-semibold text-white">EValuate</h3>
-                        </div>
-                        <p class="text-slate-400 text-sm">
-                            Your Guide to EV Economics
-                        </p>
-                        <p class="text-slate-500 text-xs mt-1">
-                            Empowering informed decisions in the electric vehicle ecosystem
-                        </p>
-                    </div>
-
-                    <!-- Center: Links -->
-                    <div class="flex flex-col items-center space-y-3">
-                        <div class="flex items-center space-x-6">
-                            <a href="https://github.com/ajithrn/evaluate" target="_blank" rel="noopener noreferrer" 
-                               class="flex items-center text-slate-400 hover:text-white transition-colors duration-200">
-                                <i data-feather="github" class="h-4 w-4 mr-2"></i>
-                                <span class="text-sm">GitHub</span>
-                            </a>
-                            <a href="https://buymeacoffee.com/ajithrn" target="_blank" rel="noopener noreferrer" 
-                               class="flex items-center text-slate-400 hover:text-yellow-400 transition-colors duration-200">
-                                <i data-feather="coffee" class="h-4 w-4 mr-2"></i>
-                                <span class="text-sm">Buy me a coffee</span>
-                            </a>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-slate-500 text-xs">
-                                Made with <i data-feather="heart" class="h-3 w-3 inline text-red-500"></i> for a sustainable future
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Right: Developer Info -->
-                    <div class="text-center md:text-right">
-                        <p class="text-slate-400 text-sm mb-1">
-                            Developed by
-                        </p>
-                        <a href="https://ajithrn.com" target="_blank" rel="noopener noreferrer" 
-                           class="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium">
-                            ajithrn.com
-                        </a>
-                        <p class="text-slate-500 text-xs mt-1">
-                            © 2025 EValuate
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Bottom Border -->
-                <div class="border-t border-slate-700 mt-6 pt-4">
-                    <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-                        <p>Professional EV economics calculator with battery chemistry analysis</p>
-                        <p class="mt-2 md:mt-0">Open source • MIT License</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+      </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 mt-20">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <!-- Left: Project Info -->
+          <div class="text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start mb-2">
+              <i data-feather="zap" class="h-5 w-5 mr-2 text-yellow-400"></i>
+              <h3 class="text-lg font-semibold text-white">EValuate</h3>
+            </div>
+            <p class="text-slate-400 text-sm">
+              Your Guide to EV Economics
+            </p>
+            <p class="text-slate-500 text-xs mt-1">
+              Empowering informed decisions in the electric vehicle ecosystem
+            </p>
+          </div>
+
+          <!-- Center: Links -->
+          <div class="flex flex-col items-center space-y-3">
+            <div class="flex items-center space-x-6">
+              <a href="https://github.com/ajithrn/evaluate" target="_blank" rel="noopener noreferrer"
+                class="flex items-center text-slate-400 hover:text-white transition-colors duration-200">
+                <i data-feather="github" class="h-4 w-4 mr-2"></i>
+                <span class="text-sm">GitHub</span>
+              </a>
+              <a href="https://buymeacoffee.com/ajithrn" target="_blank" rel="noopener noreferrer"
+                class="flex items-center text-slate-400 hover:text-yellow-400 transition-colors duration-200">
+                <i data-feather="coffee" class="h-4 w-4 mr-2"></i>
+                <span class="text-sm">Buy me a coffee</span>
+              </a>
+            </div>
+            <div class="text-center">
+              <p class="text-slate-500 text-xs">
+                Made with <i data-feather="heart" class="h-3 w-3 inline text-red-500"></i> for a sustainable future
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Developer Info -->
+          <div class="text-center md:text-right">
+            <p class="text-slate-400 text-sm mb-1">
+              Developed by
+            </p>
+            <a href="https://ajithrn.com" target="_blank" rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium">
+              ajithrn.com
+            </a>
+            <p class="text-slate-500 text-xs mt-1">
+              © 2025 EValuate
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Border -->
+        <div class="border-t border-slate-700 mt-6 pt-4">
+          <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+            <p></p>
+            <p class="mt-2 md:mt-0">Open source • MIT License</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- Tooltip Element -->
-    <div id="tooltip" class="absolute z-50 bg-gray-900 text-white text-sm rounded-lg px-3 py-2 opacity-0 transition-opacity duration-200 pointer-events-none max-w-xs shadow-lg">
+    <div id="tooltip"
+      class="absolute z-50 bg-gray-900 text-white text-sm rounded-lg px-3 py-2 opacity-0 transition-opacity duration-200 pointer-events-none max-w-xs shadow-lg">
     </div>
 
     <script src="https://unpkg.com/feather-icons"></script>
     <script type="module" src="./src/js/main.js"></script>
 </body>
+
 </html>

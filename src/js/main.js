@@ -117,6 +117,7 @@ class EVCalculatorApp {
   initializeAccordions() {
     const accordions = [
       { toggle: 'methodologyToggle', content: 'methodologyContent', chevron: 'methodologyChevron' },
+      { toggle: 'dashboardToggle', content: 'dashboardContent', chevron: 'dashboardChevron' },
       { toggle: 'specsToggle', content: 'specsContent', chevron: 'specsChevron' },
       { toggle: 'costsToggle', content: 'costsContent', chevron: 'costsChevron' },
       { toggle: 'timeToggle', content: 'timeContent', chevron: 'timeChevron' },
