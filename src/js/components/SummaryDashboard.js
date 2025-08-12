@@ -18,11 +18,16 @@ export class SummaryDashboard {
     if (!this.summaryCardsElement) return
     
     // Calculate key metrics using Home AC as baseline (most common)
-    const homeACCostPerKm = calculations.inputs.homeAC / calculations.wallToWheel20to80
-    const homeACMonthlySavings = (calculations.inputs.iceRunningCost - homeACCostPerKm) * calculations.inputs.monthlyDistance
+    const homeACRate = Number(calculations.inputs.homeAC) || 0
+    const iceRunningCost = Number(calculations.inputs.iceRunningCost) || 0
+    const monthlyDistance = Number(calculations.inputs.monthlyDistance) || 0
+    const homeACSpeed = Number(calculations.inputs.homeACSpeed) || 1
+    
+    const homeACCostPerKm = homeACRate / calculations.wallToWheel20to80
+    const homeACMonthlySavings = (iceRunningCost - homeACCostPerKm) * monthlyDistance
     const homeACAnnualSavings = homeACMonthlySavings * 12
-    const monthlyChargingCost = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) * calculations.inputs.homeAC
-    const monthlyChargingTime = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) / calculations.inputs.homeACSpeed
+    const monthlyChargingCost = (monthlyDistance / calculations.wallToWheel20to80) * homeACRate
+    const monthlyChargingTime = (monthlyDistance / calculations.wallToWheel20to80) / homeACSpeed
 
     this.summaryCardsElement.innerHTML = `
       <!-- Monthly Savings (Home AC) -->
@@ -48,7 +53,7 @@ export class SummaryDashboard {
         </div>
         <div class="text-2xl font-bold text-blue-900 mb-1">${formatCurrency(monthlyChargingCost)}</div>
         <div class="text-sm text-blue-700 mb-2">Monthly Charging Cost</div>
-        <div class="text-xs text-blue-600">${calculations.inputs.monthlyDistance} km @ ₹${calculations.inputs.homeAC}/kWh</div>
+        <div class="text-xs text-blue-600">${monthlyDistance} km @ ₹${homeACRate}/kWh</div>
       </div>
 
       <!-- Annual Savings -->
@@ -194,26 +199,31 @@ export class SummaryDashboard {
     ]
 
     const cards = chargingOptions.map(option => {
-      const costPerKm = option.rate / calculations.wallToWheel20to80
-      const monthlyCost = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) * option.rate
-      const monthlySavings = (calculations.inputs.iceRunningCost - costPerKm) * calculations.inputs.monthlyDistance
+      // Ensure rate is a valid number
+      const rate = Number(option.rate) || 0
+      const iceRunningCost = Number(calculations.inputs.iceRunningCost) || 0
+      const monthlyDistance = Number(calculations.inputs.monthlyDistance) || 0
+      
+      const costPerKm = rate / calculations.wallToWheel20to80
+      const monthlyCost = (monthlyDistance / calculations.wallToWheel20to80) * rate
+      const monthlySavings = (iceRunningCost - costPerKm) * monthlyDistance
       const savingsColor = monthlySavings > 0 ? 'text-green-600' : 'text-red-600'
 
       // Calculate charging times based on option type
       let perChargeTime, monthlyTime
       if (option.name.includes('Fast DC')) {
         perChargeTime = calculations.chargingTimes.dcFast.partial // 20-80% optimal charge
-        monthlyTime = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) / calculations.inputs.fastDCSpeed
+        monthlyTime = (monthlyDistance / calculations.wallToWheel20to80) / (Number(calculations.inputs.fastDCSpeed) || 1)
       } else {
         perChargeTime = calculations.chargingTimes.homeAC.partial // 20-80% optimal charge
-        monthlyTime = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) / calculations.inputs.homeACSpeed
+        monthlyTime = (monthlyDistance / calculations.wallToWheel20to80) / (Number(calculations.inputs.homeACSpeed) || 1)
       }
 
       return `
         <div class="bg-gradient-to-br ${option.bgColor} border ${option.borderColor} rounded-lg p-4">
           <div class="flex items-center justify-between mb-3">
             <i data-feather="${option.icon}" class="h-6 w-6 ${option.color}"></i>
-            <span class="text-xs font-medium px-2 py-1 rounded-full bg-white bg-opacity-70">₹${option.rate}/kWh</span>
+            <span class="text-xs font-medium px-2 py-1 rounded-full bg-white bg-opacity-70">₹${rate}/kWh</span>
           </div>
           <h4 class="font-semibold text-gray-900 mb-3">${option.name}</h4>
           <div class="space-y-2">

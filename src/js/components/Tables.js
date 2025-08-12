@@ -63,19 +63,21 @@ export class Tables {
     const chargingTypes = [
       { name: 'Fast DC Night (60kW)', rate: calculations.inputs.fastDCNight, icon: 'moon' },
       { name: 'Fast DC Day (60kW)', rate: calculations.inputs.fastDCDay, icon: 'sun' },
-      { name: 'Fast DC (30kW)', rate: calculations.inputs.fastDCDay, icon: 'zap' },
       { name: 'Home AC (7.2kW)', rate: calculations.inputs.homeAC, icon: 'home' },
       { name: 'Home AC Solar (7.2kW)', rate: calculations.inputs.homeACSolar, icon: 'sun' }
     ]
 
     const rows = chargingTypes.map((charging, index) => {
-      const cost0to100 = calculations.energyDrawn0to100 * charging.rate
-      const cost20to80 = calculations.energyDrawn20to80 * charging.rate
-      const costPerKm0to100 = charging.rate / calculations.wallToWheel0to100
-      const costPerKm20to80 = charging.rate / calculations.wallToWheel20to80
+      // Ensure rate is a valid number
+      const rate = Number(charging.rate) || 0
+      
+      const cost0to100 = calculations.energyDrawn0to100 * rate
+      const cost20to80 = calculations.energyDrawn20to80 * rate
+      const costPerKm0to100 = rate / calculations.wallToWheel0to100
+      const costPerKm20to80 = rate / calculations.wallToWheel20to80
       
       // Calculate monthly charging cost based on usage (using optimal 20-80% efficiency)
-      const monthlyCost = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) * charging.rate
+      const monthlyCost = (calculations.inputs.monthlyDistance / calculations.wallToWheel20to80) * rate
 
       return `
         <tr class="table-row-hover">
@@ -85,7 +87,7 @@ export class Tables {
               ${charging.name}
             </div>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center font-medium">₹${charging.rate.toFixed(1)}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center font-medium">₹${rate.toFixed(1)}</td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-center">
             <span class="text-green-600 font-semibold">${formatCurrency(cost0to100)}</span>
             <div class="text-purple-600 text-xs mt-1">(₹${costPerKm0to100.toFixed(2)}/km)</div>
@@ -168,10 +170,15 @@ export class Tables {
     ]
 
     const rows = chargingTypes.map((charging) => {
+      // Ensure rate is a valid number
+      const rate = Number(charging.rate) || 0
+      const iceRunningCost = Number(calculations.inputs.iceRunningCost) || 0
+      const monthlyDistance = Number(calculations.inputs.monthlyDistance) || 0
+      
       // Average cost per km (mix of 0-100% and 20-80%)
-      const evCostPerKm = (charging.rate / calculations.wallToWheel20to80 + charging.rate / calculations.wallToWheel0to100) / 2
-      const savingsPerKm = calculations.inputs.iceRunningCost - evCostPerKm
-      const monthlySavings = savingsPerKm * calculations.inputs.monthlyDistance
+      const evCostPerKm = (rate / calculations.wallToWheel20to80 + rate / calculations.wallToWheel0to100) / 2
+      const savingsPerKm = iceRunningCost - evCostPerKm
+      const monthlySavings = savingsPerKm * monthlyDistance
       const annualSavings = monthlySavings * 12
 
       const savingsClass = savingsPerKm > 0 ? 'text-green-600' : 'text-red-600'
@@ -185,7 +192,7 @@ export class Tables {
             </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-green-600">₹${evCostPerKm.toFixed(2)}</td>
-          <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">₹${calculations.inputs.iceRunningCost.toFixed(2)}</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">₹${iceRunningCost.toFixed(2)}</td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-center font-semibold ${savingsClass}">₹${savingsPerKm.toFixed(2)}</td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-center font-semibold ${savingsClass}">${formatCurrency(monthlySavings)}</td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-center font-semibold ${savingsClass}">${formatCurrency(annualSavings)}</td>

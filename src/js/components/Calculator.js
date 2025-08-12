@@ -79,7 +79,7 @@ export class Calculator {
     const label = document.getElementById('efficiencyLabel')
     if (!label) return
 
-    const iconHtml = '<i data-feather="gauge" class="h-4 w-4 mr-1 text-indigo-600"></i>'
+    const iconHtml = '<i data-feather="activity" class="h-4 w-4 mr-1 text-indigo-600"></i>'
     const helpHtml = '<div class="relative ml-2"><i data-feather="help-circle" class="h-4 w-4 text-gray-400 cursor-help tooltip-trigger" data-tooltip="Real-world efficiency from battery to wheels"></i></div>'
     
     if (mode === 'kmPerKwh') {
