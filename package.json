@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:local": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [
     "ev-calculator",
@@ -39,7 +41,6 @@
     "feather-icons": "^4.29.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^7.2.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.33.0",
     "postcss": "^8.5.6",
